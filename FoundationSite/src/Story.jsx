@@ -1,7 +1,7 @@
 const Story = () => {
   return (
-    <div className="story">
-      <h1>Our Legendary Story</h1>
+    <div className="navbar">
+      <h2>Our Legendary Story</h2>
     </div>
   );
 }

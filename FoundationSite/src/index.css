@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Oswald:wght@500&display=swap');
 
@@ -8,33 +9,93 @@
 }
 
 body {
-  background-image: url(https://images.alphacoders.com/296/296993.jpg);
+  background-image: url(https://wallpaperset.com/w/full/a/0/f/16456.jpg);
   background-size: cover;
+  font-family: 'Oswald', sans-serif; /* Fallback font */
+  color: #fff; /* Default text color on the background */
 }
-
 
 h1 {
   font-family: 'Dancing Script', cursive;
   font-weight: bolder;
   font-size: 4em;
   text-align: center;
-  margin-top: 100px;
-  margin-bottom: 75px;
-
+  margin-top: 50px;
+  margin-bottom: 125px;
 }
 
-#navbar {
-  border-bottom: 1px solid black;
+.navbar {
   display: flex;
-  justify-content: space-around; 
-  padding: 10px 0;
-  backdrop-filter: blur(1000px);
+  flex-direction: column;
+  background-color: #333;
+  color: #d8d6d6;
+  padding: 10px;
+  align-items: center;
 }
 
-#navbar a {
-  text-decoration: none;
-  color: #333; /* Link color */
-  font-weight: bold;
+.navbar div {
+  padding: 8px;
+  cursor: pointer;
+
+}
+
+#togglemenu {
+  display: flex;
+  flex-direction: column;
+  background-color: #333;
+  color: #d8d6d6;
+  max-width: 150px;
   font-size: x-large;
-  font-family: 'Oswald', sans-serif;
+  justify-content: space-between;
+  position: absolute;
+  top: 60px; /* Adjust the distance from the top as needed */
+  left: 20px; /* Adjust the distance from the left as needed */
+  z-index: 1; /* Ensure it's above other elements */
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
+}
+
+#togglemenu.open {
+  visibility: visible;
+  opacity: 1;
+}
+
+#togglemenu a {
+  text-decoration: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #d8d6d6;
+}
+
+.menu-icon {
+  cursor: pointer;
+  background-color: #333;
+  color: #d8d6d6;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+  text-align: left;
+  font-size: large;
+  max-width: 40px;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background-color: #fff;
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+  }
+
+  .navbar {
+    left: -100%; /* Initially off-screen for smaller screens */
+  }
+
+  .navbar.open {
+    left: 0;
+  }
 }
