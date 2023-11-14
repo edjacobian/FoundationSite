@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Oswald:wght@500&display=swap');
 
 * {
@@ -15,7 +15,12 @@ body {
 
 h1 {
   font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  font-size: 4em;
   text-align: center;
+  margin-top: 100px;
+  margin-bottom: 75px;
+
 }
 
 #navbar {
@@ -30,5 +35,6 @@ h1 {
   text-decoration: none;
   color: #333; /* Link color */
   font-weight: bold;
+  font-size: x-large;
   font-family: 'Oswald', sans-serif;
 }
