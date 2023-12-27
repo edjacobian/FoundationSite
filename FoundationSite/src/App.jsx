@@ -4,6 +4,7 @@ import About from './About.jsx';
 import Home from './Home.jsx';
 import Events from './Events.jsx';
 import Story from './Story.jsx';
+import './index.css';
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +16,9 @@ function App() {
   return (
     <div id="header">
       <div className={`menu-icon ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
-        ☰
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
       </div>
       <div id="togglemenu" className={menuOpen ? 'open' : ''}>
         <Link to="/" onClick={toggleMenu}>
