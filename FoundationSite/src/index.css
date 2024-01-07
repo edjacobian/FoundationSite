@@ -8,18 +8,41 @@
 }
 
 body {
-  background-image: url(https://wallpaperset.com/w/full/a/0/f/16456.jpg);
   background-size: cover;
   font-family: 'Oswald', sans-serif; /* Fallback font */
-  color: #fff; /* Default text color on the background */
+  color: #080808; /* Default text color on the background */
+}
+
+.logo {
+  width: 30%;
+  height: 30%;
+}
+
+.logocontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.month {
+  margin-bottom: 20px; /* Add some space between months */
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.month.open {
+  /* Styles for each month when open */
+  background-color: #e0e0e0;
 }
 
 h1 {
-  font-family: 'Dancing Script', cursive;
-  font-weight: bolder;
-  font-size: 4em;
+  font-family: 'Arial';
+  font-size: 58px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 8px;
   margin-bottom: 125px;
 }
 
@@ -28,6 +51,7 @@ h1 {
   flex-direction: column;
   background-color: #333;
   color: #d8d6d6;
+  margin-right: 500px;
   padding: 10px;
   align-items: center;
 }
@@ -40,7 +64,7 @@ h1 {
 #togglemenu {
   display: flex;
   flex-direction: column;
-  background-color: #333;
+  background-color: #4c0097;
   color: #d8d6d6;
   max-width: 150px;
   font-size: x-large;
@@ -65,9 +89,14 @@ h1 {
   color: #d8d6d6;
 }
 
+#seebelow {
+  text-align: center;
+  margin-bottom: 150px;
+}
+
 .menu-icon {
   cursor: pointer;
-  background-color: #333;
+  background-color: #4c0097;
   color: #d8d6d6;
   padding: 10px;
   margin-bottom: 10px;
@@ -122,3 +151,71 @@ h1 {
     left: 0;
   }
 }
+
+
+.monthly-calendar {
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #ccc;
+  margin: 20px;
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.days-of-week {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.days-of-week div {
+  font-weight: bold;
+}
+
+.days-of-month {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.day {
+  width: 14.28%; /* 100% / 7 days */
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.day-number {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.events {
+  margin-top: 5px;
+}
+
+.event {
+  background-color: #ffc107;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 3px;
+}
+

@@ -4,6 +4,7 @@ import About from './About.jsx';
 import Home from './Home.jsx';
 import Events from './Events.jsx';
 import Story from './Story.jsx';
+import logo from '/home/edjacobian/Foundation/FoundationSite/src/logo option 1.png';
 import './index.css';
 
 function App() {
@@ -34,7 +35,9 @@ function App() {
           Our Mission
         </Link>
       </div>
-      <h1>Robert Berotti Memorial Foundation Inc.</h1>
+      <div className='logocontainer'>
+      <img src={logo}className='logo' alt="Logo Option 1" />
+      </div>
       <div id="main-section">
         <Routes>
           <Route path="/" element={<Home />} />
