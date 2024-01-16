@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Confetti from 'react-dom-confetti';
 import MonthCalendar from './MonthCalendar';
 
 const Events = () => {
@@ -17,6 +18,8 @@ const Events = () => {
     november: false,
     december: false,
   });
+  const [confetti, setConfetti] = useState(false);
+
 
   const goToPrevMonth = () => {
     setCurrentMonth((prevMonth) => new Date(prevMonth.getFullYear(), prevMonth.getMonth() - 1, 1));
@@ -32,6 +35,22 @@ const Events = () => {
       [month]: !prev[month],
     }));
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolledToBottom =
+        window.innerHeight + window.scrollY >= document.body.offsetHeight - 1;
+      if (scrolledToBottom) {
+        setConfetti(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div>
@@ -173,6 +192,7 @@ const Events = () => {
             </div>
           )}
         </div>
+        <Confetti active={confetti} config={{ angle: 90, spread: 600, startVelocity: 100, elementCount: 200 }} />
       </div>
     </div>
   );
