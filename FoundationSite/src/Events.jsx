@@ -192,7 +192,7 @@ const Events = () => {
             </div>
           )}
         </div>
-        <Confetti active={confetti} config={{ angle: 90, spread: 600, startVelocity: 100, elementCount: 200 }} />
+        <Confetti active={confetti} config={{ angle: 90, spread: 600, startVelocity: 100, elementCount: 200, colors: ['#4169E1', '#E6E6FA', '#483D8B'] }} />
       </div>
     </div>
   );
