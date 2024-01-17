@@ -38,9 +38,12 @@ const Events = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolledToBottom =
-        window.innerHeight + window.scrollY >= document.body.offsetHeight - 1;
-      if (scrolledToBottom) {
+
+      const scrollThreshold = 75;
+  
+      const scrolledToThreshold = window.scrollY >= scrollThreshold;
+  
+      if (scrolledToThreshold) {
         setConfetti(true);
       }
     };
@@ -57,7 +60,7 @@ const Events = () => {
       <div className="year">
         <h1>2024</h1>
       <div>
-      <MonthCalendar currentMonth={currentMonth} />
+      <MonthCalendar currentMonth={currentMonth} goToPrevMonth={goToPrevMonth} goToNextMonth={goToNextMonth} />
       </div>
         <h2 id='seebelow'>See Below For Calendar of Events</h2>
       </div>
@@ -192,7 +195,7 @@ const Events = () => {
             </div>
           )}
         </div>
-        <Confetti active={confetti} config={{ angle: 90, spread: 600, startVelocity: 100, elementCount: 200, colors: ['#4169E1', '#E6E6FA', '#483D8B'] }} />
+        <Confetti active={confetti} config={{ angle: 90, spread: 600, startVelocity: 200, elementCount: 500, colors: ['#4169E1', '#E6E6FA', '#483D8B'] }} />
       </div>
     </div>
   );

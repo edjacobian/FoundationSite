@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MonthlyCalendar = ({ currentMonth, goToPrevMonth, goToNextMonth }) => {
+const MonthCalendar = ({ currentMonth, goToPrevMonth, goToNextMonth }) => {
   const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-  // Dummy data for events (replace with your actual data)
+  // Dummy data for events (replace actual data)
   const events = [
-    { day: 12, description: 'Annual Meeting' },
+    { month: 0, day: 12, description: 'Annual Meeting' },
     // Add more events as needed
   ];
 
@@ -33,10 +33,10 @@ const MonthlyCalendar = ({ currentMonth, goToPrevMonth, goToNextMonth }) => {
               <span className="day-number">{day}</span>
               <div className="events">
                 {events
-                  .filter((event) => event.day === day)
-                  .map((event) => (
-                    <div key={event.description} className="event">
-                      {event.description}
+                .filter((event) => event.month === currentMonth.getMonth() && event.day === day)
+                .map((event) => (
+                  <div key={event.description} className="event">
+                    {event.description}
                     </div>
                   ))}
               </div>
@@ -48,4 +48,4 @@ const MonthlyCalendar = ({ currentMonth, goToPrevMonth, goToNextMonth }) => {
   );
 };
 
-export default MonthlyCalendar;
+export default MonthCalendar;
