@@ -14,8 +14,13 @@ body {
 }
 
 .logo {
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 45px;
+  padding-top: 22px;
 }
 
 .logocontainer {
