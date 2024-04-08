@@ -58,7 +58,7 @@ const Events = () => {
   return (
     <div>
       <div className="year">
-        <h1>2024</h1>
+        <h1>Calendar/Events</h1>
       <div>
       <MonthCalendar currentMonth={currentMonth} goToPrevMonth={goToPrevMonth} goToNextMonth={goToNextMonth} />
       </div>

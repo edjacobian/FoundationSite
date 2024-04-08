@@ -8,7 +8,8 @@
 }
 
 body {
-  background-size: cover;
+  background: linear-gradient(to bottom, white 0, rgb(154, 114, 182) 90%, rgb(140, 8, 234));
+  height: 100vh;
   font-family: 'Oswald', sans-serif; /* Fallback font */
   color: #080808; /* Default text color on the background */
 }
