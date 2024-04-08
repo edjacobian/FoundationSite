@@ -5,7 +5,7 @@ import Home from './Home.jsx';
 import Events from './Events.jsx';
 import Story from './Story.jsx';
 import Contact from './Contact.jsx';
-import logo from '/home/edjacobian/Foundation/FoundationSite/src/logo option 1.png';
+import logo from '/home/edjacobian/Foundation/FoundationSite/src/images/logo option 1.png';
 import './index.css';
 
 function App() {

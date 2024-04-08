@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, white 0, rgb(154, 114, 182) 90%, rgb(140, 8, 234));
+  background-color: rgb(201, 143, 255);
   height: 100vh;
   font-family: 'Oswald', sans-serif; /* Fallback font */
   color: #080808; /* Default text color on the background */
@@ -22,6 +22,14 @@ body {
   right: 0;
   padding-right: 45px;
   padding-top: 22px;
+}
+
+.homephotos {
+  max-width: 35%;
+  max-height: 35%;
+  position: relative;
+  top: 5%; /* Align the top of the slideshow to the vertical center */
+  left: 33%; /* Align the left of the slideshow to the horizontal center */
 }
 
 .logocontainer {
