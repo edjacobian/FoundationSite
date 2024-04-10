@@ -8,8 +8,7 @@
 }
 
 body {
-  background-color: rgb(201, 143, 255);
-  height: 100vh;
+  background: linear-gradient(to bottom, rgb(201, 143, 255) 85%, rgb(140, 8, 234));
   font-family: 'Oswald', sans-serif; /* Fallback font */
   color: #080808; /* Default text color on the background */
 }
@@ -25,11 +24,50 @@ body {
 }
 
 .homephotos {
-  max-width: 35%;
-  max-height: 35%;
+  max-width: 45%;
+  max-height: 45%;
   position: relative;
   top: 5%; /* Align the top of the slideshow to the vertical center */
-  left: 33%; /* Align the left of the slideshow to the horizontal center */
+  left: 49%; /* Align the left of the slideshow to the horizontal center */
+}
+
+.slick-slider .slick-prev,
+.slick-slider .slick-next {
+  display: none !important;
+}
+
+
+.top-bar {
+  background-color: #4c0097;
+  height: 90px;
+  width: 85%;
+  display: flex;
+  padding-right: 150px;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
+.top-bar h1 {
+  margin-left: 148px; 
+}
+
+.main-box {
+  display: flex;
+  flex-direction: column; /* Arrange children vertically */
+  align-items: center; /* Center children horizontally */
+}
+
+/* Style for the text box */
+.main-text-box {
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style for the slideshow */
+.slideshow {
+  max-width: 850px;
 }
 
 .logocontainer {

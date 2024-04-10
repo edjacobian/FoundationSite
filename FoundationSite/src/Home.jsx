@@ -22,41 +22,50 @@ const Home = () => {
     autoplay: true,
     autoplaySpeed: 10000,
     pauseOnHover: false,
+    fade: true,
+    cssEase: 'linear'
   };
   
   
   return (
     <div>
-      <h1>Welcome to RBMFI</h1>
-      <h3>Please Scroll Down For More Information</h3>
-      <div>
-        <Slider {...settings}>
-          <div>
-            <img src={Bob1}className='homephotos'/>
-          </div>
-          <div>
-          <img src={Bob2}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob3}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob4}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob5}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob6}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob7}className='homephotos' />
-          </div>
-          <div>
-          <img src={Bob8}className='homephotos' />
-          </div>
-        </Slider>
+      <div className="top-bar">
+        <h1>Robert Berotti Memorial Foundation</h1>
       </div>
+      <div className="main-box">
+        <div className="main-text-box">
+          <h2>Your Text Here</h2>
+            <p>This is your text content.</p>
+        </div>
+          <div className='slideshow'>
+            <Slider {...settings}>
+              <div>
+              <img src={Bob1}className='homephotos'/>
+              </div>
+              <div>
+              <img src={Bob2}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob3}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob4}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob5}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob6}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob7}className='homephotos' />
+              </div>
+              <div>
+              <img src={Bob8}className='homephotos' />
+              </div>
+            </Slider>
+          </div>
+        </div>
     </div>
   );
 }
