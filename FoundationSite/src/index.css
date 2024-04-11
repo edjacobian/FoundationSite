@@ -7,11 +7,12 @@
   box-sizing: border-box;
 }
 
+
 body {
-  background: linear-gradient(to bottom, rgb(201, 143, 255) 85%, rgb(140, 8, 234));
-  font-family: 'Oswald', sans-serif; /* Fallback font */
-  color: #080808; /* Default text color on the background */
+  background-image: url('/home/edjacobian/Foundation/FoundationSite/src/images/dimroad.jpg');
+  background-size: cover;
 }
+
 
 .logo {
   width: 20%;
@@ -52,22 +53,32 @@ body {
   margin-left: 148px; 
 }
 
-.main-box {
+
+
+.container {
   display: flex;
-  flex-direction: column; /* Arrange children vertically */
-  align-items: center; /* Center children horizontally */
 }
 
-/* Style for the text box */
-.main-text-box {
-  width: 50%;
+.mission-text-container {
+  flex: 1;
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.mission-text {
   padding: 20px;
   text-align: center;
+  border: 2px solid #4c0097; /* Add a border */
+  border-radius: 10px; /* Optional: Add rounded corners */
 }
 
-/* Style for the slideshow */
+.slideshow-container {
+  flex: 1;
+}
+
+
 .slideshow {
   max-width: 850px;
+  margin-left: 333px;
 }
 
 .logocontainer {
@@ -98,7 +109,7 @@ h1 {
   margin-bottom: 125px;
 }
 
-.navbar {
+.story-header {
   display: flex;
   flex-direction: column;
   background-color: #333;

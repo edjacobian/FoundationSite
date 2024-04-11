@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link, Routes, Route } from 'react-router-dom';
-import About from './About.jsx';
 import Home from './Home.jsx';
 import Events from './Events.jsx';
 import Story from './Story.jsx';
@@ -27,13 +26,10 @@ function App() {
           Home
         </Link>
         <Link to="/story" onClick={toggleMenu}>
-          Our Story
+          Our Mission
         </Link>
         <Link to="/events" onClick={toggleMenu}>
           Events
-        </Link>
-        <Link to="/about" onClick={toggleMenu}>
-          Our Mission
         </Link>
         <Link to="/contact" onClick={toggleMenu}>
           Contact Us
@@ -47,7 +43,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/story" element={<Story />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
