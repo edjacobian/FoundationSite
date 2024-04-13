@@ -4,7 +4,7 @@ import Home from './Home.jsx';
 import Events from './Events.jsx';
 import Story from './Story.jsx';
 import Contact from './Contact.jsx';
-import logo from '/home/edjacobian/Foundation/FoundationSite/src/images/logo option 1.png';
+import logo from '/home/edjacobian/Foundation/FoundationSite/src/images/logo2x.png';
 import './index.css';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
         </Link>
       </div>
       <div className='logocontainer'>
-      <img src={logo}className='logo' alt="Logo Option 1" />
+      <img src={logo}className='logo' alt="Logo Option 2" />
       </div>
       <div id="main-section">
         <Routes>
@@ -46,6 +46,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <div className="background-container"></div>
     </div>
   );
 }
