@@ -46,7 +46,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
-      <div className="background-container"></div>
     </div>
   );
 }

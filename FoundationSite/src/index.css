@@ -10,8 +10,6 @@
 
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #d3aef0;
 }
 
@@ -19,8 +17,10 @@ body {
   background-image: url('/home/edjacobian/Foundation/FoundationSite/src/images/purplewithbench.jpg');
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 250px;
-  background-position: calc(350% + -1900px) center;
+  padding: 400px;
+  margin-right: 300px;
+  margin-left: 150px;
+  margin-top: 22px;
 }
 
 

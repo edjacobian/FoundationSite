@@ -6,6 +6,7 @@ const Home = () => {
       <div className="top-bar">
         <h1>Robert Berotti Memorial Foundation</h1>
       </div>
+      <div className="background-container"></div>
     </div>
   );
 }
