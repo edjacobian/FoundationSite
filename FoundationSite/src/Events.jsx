@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Confetti from 'react-dom-confetti';
+
 import MonthCalendar from './MonthCalendar';
 
 const Events = () => {
@@ -18,7 +18,7 @@ const Events = () => {
     november: false,
     december: false,
   });
-  const [confetti, setConfetti] = useState(false);
+  
 
 
   const goToPrevMonth = () => {

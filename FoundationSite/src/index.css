@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Oswald:wght@500&display=swap');
+@import '@fortawesome/fontawesome-svg-core/styles.css';
+
 
 * {
   margin: 0;
@@ -7,20 +8,100 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
 
 body {
   display: flex;
-  background-color: #d3aef0;
+  background-color: #e4cbf8;
 }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  max-height: 50px;
+  background-color: #333;
+  padding: 10px;
+  z-index: 1000;
+}
+
+footer h3 {
+  margin: 0; 
+  color: #fff;
+  white-space: nowrap;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+footer a {
+  color: #fff;
+  font-size: 36px; 
+  text-decoration: none;
+  margin-left: 880px;
+}
+
+footer span {
+  color: white;
+}
+
 
 .background-container {
   background-image: url('/home/edjacobian/Foundation/FoundationSite/src/images/purplewithbench.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
-  padding: 400px;
-  margin-right: 300px;
-  margin-left: 150px;
-  margin-top: 22px;
+  background-size: cover;
+  height: 80vh; /* Adjust the height as needed */
+  width: 100%; /* Adjust the width as needed */
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -42%);
+  z-index: 1; /* Ensure it's above other content */
+}
+
+
+
+
+.overlay {
+  position: absolute;
+  transform: translate(5%, 450%);
+  text-align: left;
+  padding: 21px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.overlay h2 {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: 200;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.overlay p {
+  color: white;
+  font-size: 18px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.contact-button {
+  position: absolute;
+  bottom: 10px;
+  right: 300px;
+  padding: 10px 20px;
+  background-color: #8d3dfc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 
@@ -28,18 +109,13 @@ body {
   width: 20%;
   height: auto;
   position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 45px;
-  padding-top: 22px;
+  z-index: 1000;
 }
 
-.homephotos {
-  max-width: 45%;
-  max-height: 45%;
-  position: relative;
-  top: 5%; /* Align the top of the slideshow to the vertical center */
-  left: 49%; /* Align the left of the slideshow to the horizontal center */
+
+.storyphotos {
+  width: 100%;
+  height: auto;
 }
 
 .slick-slider .slick-prev,
@@ -48,52 +124,65 @@ body {
 }
 
 
+
 .top-bar {
-  background-color: #8d3dfc;
-  height: 90px;
-  width: 85%;
+  background-color: #aa78ef;
+  height: 15vh;
+  width: 100vw;
   display: flex;
-  padding-right: 160px;
   justify-content: center;
   color: white;
+  position: fixed;
+  top: 0;
 }
 
 .top-bar h1 {
-  margin-left: 300px;
-  padding-right: 75px;
+  margin: 0;
+  margin-top: 25px;
   white-space: nowrap;
-
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+  font-size: 50px;
 }
-
 
 
 .container {
   display: flex;
 }
 
-.mission-text-container {
-  flex: 1;
-  margin-right: 20px; /* Adjust as needed */
+.story-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.mission-text {
-  padding: 20px;
-  text-align: center;
-  border: 2px solid #4c0097; /* Add a border */
-  border-radius: 10px; /* Optional: Add rounded corners */
+.mission-container {
+  flex: 0 0 40%; /* Adjust width as needed */
 }
 
 .slideshow-container {
-  flex: 1;
+  flex: 0 0 50%; /* Adjust width as needed */
 }
 
 
-.slideshow {
-  max-width: 850px;
-  margin-left: 333px;
+.mission-text-container {
+  display: grid;
+  padding: 20px;
 }
+
+.mission-text {
+  border: 2px solid #4c0097;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
 
 .logocontainer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -147,14 +236,17 @@ h1 {
   position: absolute;
   top: 50px; /* Adjust the distance from the top as needed */
   left: 20px; /* Adjust the distance from the left as needed */
-  z-index: 1; /* Ensure it's above other elements */
   visibility: hidden;
   transition: visibility 0s, opacity 0.5s linear; /* Smooth transition */
+  z-index: 2;
 }
 
 #togglemenu.open {
   visibility: visible;
   opacity: 1;
+  z-index: 2;
+  margin-top: 30px;
+  margin-left: 5px;
 }
 
 #togglemenu a {
@@ -162,6 +254,7 @@ h1 {
   padding: 8px;
   cursor: pointer;
   color: #d8d6d6;
+  z-index: 2;
 }
 
 #seebelow {
@@ -174,12 +267,15 @@ h1 {
   background-color: #4c0097;
   color: #d8d6d6;
   padding: 10px;
+  position: relative;
   margin-bottom: 10px;
   margin-left: 25px;
   text-align: left;
+  top: 25px;
   font-size: large;
-  max-width: 40px;
+  max-width: 45px;
   transition: transform 0.3s ease; /* Add transition for smooth rotation */
+  z-index: 2;
 }
 
 .bar {
@@ -265,6 +361,7 @@ h1 {
 .days-of-week div {
   font-weight: bold;
 }
+
 
 .days-of-month {
   display: flex;
