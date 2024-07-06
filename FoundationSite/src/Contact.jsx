@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Confetti from 'react-confetti';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -9,79 +10,26 @@ const Contact = () => {
   });
   const [submitted, setSubmitted] = useState(false);
   const [audienceId, setAudienceId] = useState('');
+  const [showConfetti, setShowConfetti] = useState(false);
+
+  useEffect(() => {
+    setShowConfetti(true); // Trigger confetti on page load
+  }, []);
+
+  useEffect(() => {
+    // Trigger confetti on page reload
+    setShowConfetti(true);
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const createAudience = async () => {
-    try {
-      const response = await axios.post(
-        'https://cors-anywhere.herokuapp.com/https://api.mailchimp.com/3.0/lists',
-        {
-          name: 'Your Audience Name',
-          contact: {
-            company: 'Your Company Name',
-            address1: 'Your Address Line 1',
-            city: 'Your City',
-            state: 'Your State',
-            zip: 'Your ZIP Code',
-            country: 'Your Country'
-          },
-          permission_reminder: 'You are receiving this email because...',
-          campaign_defaults: {
-            from_name: 'Your Name',
-            from_email: 'your@email.com',
-            subject: 'Your Subject',
-            language: 'Your Language'
-          }
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ef7d5042304651d09d5cf90c81713a41-us18'
-          }
-        }
-      );
-      const id = response.data.id;
-      setAudienceId(id);
-      console.log('Audience created with ID:', id);
-    } catch (error) {
-      console.error('Error creating audience:', error);
-    }
-  };
-
-  const addContactToAudience = async () => {
-    try {
-      await axios.post(
-        `https://cors-anywhere.herokuapp.com/https://api.mailchimp.com/3.0/lists/${audienceId}/members`,
-        {
-          email_address: formData.email,
-          status: 'subscribed',
-          merge_fields: {
-            FNAME: formData.firstName,
-            LNAME: formData.lastName
-          }
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ef7d5042304651d09d5cf90c81713a41-us18'
-          }
-        }
-      );
-      setSubmitted(true);
-      console.log('Contact added to audience:', formData.email);
-    } catch (error) {
-      console.error('Error adding contact to audience:', error);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createAudience();
-      await addContactToAudience();
+      setShowConfetti(true); // Trigger confetti on form submission
+      // Your form submission logic here...
     } catch (error) {
       console.error('An error occurred:', error);
     }
@@ -89,16 +37,27 @@ const Contact = () => {
 
   return (
     <div>
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          recycle={false}
+          numberOfPieces={975}
+          initialVelocityY={18}
+          initialVelocityX={18}
+          confettiSource={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+        />
+      )}
       <div className="top-bar">
         <h1>Robert Berotti Memorial Foundation</h1>
       </div>
-      <div style={{ textAlign: "center", marginTop: "145px", marginLeft: "350px", backgroundColor: "#aa78ef", borderRadius: "10px", padding: "20px", display: "inline-block" }}>
+      <div style={{ textAlign: "center", marginTop: "85px", marginLeft: "505px", backgroundColor: "#aa78ef", borderRadius: "10px", padding: "20px", display: "inline-block" }}>
         <h2 style={{ color: "white", fontSize: "xx-large"}}>Get Involved to Make A Difference!</h2>
         <h2 style={{ color: "white", fontSize: "xx-large"}}>Contact Us:</h2><br></br>
         <p style={{ fontSize: "18px", fontStyle: "italic", color: "#1338BE" }}><a href="mailto:outreach@robertberottimemorialfoundation.org" style={{ color: "#1338BE", textDecoration: "none", fontWeight: "bold" }}>outreach@robertberottimemorialfoundation.org</a></p>
       </div>
       
-      <div style={{ textAlign: "center", marginTop: "25px", marginLeft: "425px", backgroundColor: "#aa78ef", borderRadius: "10px", padding: "20px", display: "inline-block" }}>
+      <div style={{ textAlign: "center", marginTop: "25px", marginLeft: "600px", backgroundColor: "#aa78ef", borderRadius: "10px", padding: "20px", display: "inline-block" }}>
         <h2 style={{ fontSize: "xx-large", color: "white"}}>Join Our Mailing List</h2>
         {submitted ? (
           <p style={{ color: "white" }}>Thank you for subscribing!</p>
@@ -114,13 +73,19 @@ const Contact = () => {
             </label><br></br>
             <label>
               Email:
-              <input type="email" name="email" value={formData.email} onChange={handleChange} />
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              style={{ marginLeft: "32px"}}
+            />
             </label><br></br>
             <input type="submit" value="Submit" />
           </form>
         )}
       </div>
-      </div>
+    </div>
   );
 }
 
