@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import Confetti from 'react-confetti';
 
 const Contact = () => {
@@ -9,17 +8,7 @@ const Contact = () => {
     email: ''
   });
   const [submitted, setSubmitted] = useState(false);
-  const [audienceId, setAudienceId] = useState('');
   const [showConfetti, setShowConfetti] = useState(false);
-
-  useEffect(() => {
-    setShowConfetti(true); // Trigger confetti on page load
-  }, []);
-
-  useEffect(() => {
-    // Trigger confetti on page reload
-    setShowConfetti(true);
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,7 +17,10 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      setShowConfetti(true); // Trigger confetti on form submission
+      // Trigger confetti on form submission
+      setShowConfetti(true);
+      setTimeout(() => setShowConfetti(false), 5000); // Hide confetti after 5 seconds
+      setSubmitted(true);
       // Your form submission logic here...
     } catch (error) {
       console.error('An error occurred:', error);
