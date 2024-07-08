@@ -50,7 +50,7 @@ function App() {
         </Routes>
       </div>
       <footer>
-        <h3>In Memorial of Robert Berotti 6/22/1965 - 4/25/2024</h3>
+        <h3>In Memorial of Robert Berotti 6/22/1965 - 4/25/2023</h3>
         <a href="https://www.instagram.com/r_berotti_memorial_foundation?igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
